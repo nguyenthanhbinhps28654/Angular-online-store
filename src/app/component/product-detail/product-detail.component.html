@@ -1,0 +1,133 @@
+<div class="product-container">
+  <!-- Ảnh sản phẩm -->
+  <div class="product-image-section">
+    <img [src]="product.HinhAnh" class="img-fluid product-image" alt="{{ product.name }}">
+  </div>
+
+  <!-- Thông tin sản phẩm -->
+  <div class="product-details-section">
+    <!-- Tiêu đề và tên sản phẩm -->
+    <div class="product-title">
+      <h4 class="product-category">Sustainable Materials</h4>
+
+      <p class="product-description">{{ product.name }}</p>
+    </div>
+    <!-- Giá sản phẩm -->
+    <p class="product-price">{{ product.price | number }}₫</p>
+
+    <!-- Các lựa chọn kích thước -->
+    <div class="size-options">
+      <label for="size" class="size-label">Select Size</label>
+      <div class="size-buttons">
+        <button class="btn btn-outline-secondary">S</button>
+        <button class="btn btn-outline-secondary">M</button>
+        <button class="btn btn-outline-secondary">L</button>
+        <button class="btn btn-outline-secondary">XL</button>
+        <button class="btn btn-outline-secondary">2XL</button>
+      </div>
+    </div>
+
+    <!-- Nút thêm vào giỏ hàng -->
+    <div class="action-buttons">
+      <button class="btn btn-dark btn-add-to-bag">Add to Bag</button>
+      <button class="btn btn-outline-secondary btn-favourite">
+        <i class="far fa-heart"></i> Favourite
+      </button>
+    </div>
+
+    <!-- Thông tin phụ -->
+    <div class="product-info">
+      <p class="info-text">This product is made from 100% recycled polyester fibres</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .product-container {
+    display: flex;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .product-image-section {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .product-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .product-details-section {
+    flex: 1;
+    padding-left: 20px;
+  }
+
+  .product-title h4 {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .product-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+
+  .product-description {
+    color: #6c757d;
+  }
+
+  .product-price {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #333;
+    margin: 15px 0;
+  }
+
+  .size-options {
+    margin-top: 20px;
+  }
+
+  .size-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+
+  .size-buttons button {
+    margin-right: 10px;
+  }
+
+  .action-buttons {
+    margin-top: 30px;
+  }
+
+  .btn-add-to-bag {
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+  }
+
+  .btn-favourite {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .product-info {
+    margin-top: 20px;
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .info-text {
+    font-size: 0.875rem;
+    color: #333;
+  }
+</style>

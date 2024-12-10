@@ -1,0 +1,115 @@
+
+<div class="gray py-3">
+  <div class="container">
+    <div class="row">
+      <div class="colxl-12 col-lg-12 col-md-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Login</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ======================= Top Breadcrubms ======================== -->
+
+<!-- ======================= Login Detail ======================== -->
+<section class="middle">
+  <div class="container">
+    <div class="row align-items-start justify-content-between">
+
+      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+          <div class="card">
+            <div class="card-header">
+              Login
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="id">Email</label>
+                 <input type="text" name="email" id="email"
+                  formControlName = "email"
+                  class="form-control" placeholder="Username" aria-describedby="idHelpId">
+                <!-- <small id="idHelpId" class="text-muted">Username is required</small> -->
+              </div>
+              <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" name="password" id="password"
+                formControlName="password"
+                class="form-control" placeholder="Input any password" aria-describedby="nameHelpId">
+                <!-- <small id="nameHelpId" class="text-muted">Password is required and at least 6 characters</small> -->
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary">Login</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+
+    </div>
+  </div>
+</section>
+<!-- ======================= Login End ======================== -->
+
+<!-- ============================= Customer Features =============================== -->
+<section class="px-0 py-3 br-top">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+        <div class="d-flex align-items-center justify-content-start py-2">
+          <div class="d_ico">
+            <i class="fas fa-shopping-basket theme-cl"></i>
+          </div>
+          <div class="d_capt">
+            <h5 class="mb-0">Free Shipping</h5>
+            <span class="text-muted">Capped at $10 per order</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+        <div class="d-flex align-items-center justify-content-start py-2">
+          <div class="d_ico">
+            <i class="far fa-credit-card theme-cl"></i>
+          </div>
+          <div class="d_capt">
+            <h5 class="mb-0">Secure Payments</h5>
+            <span class="text-muted">Up to 6 months installments</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+        <div class="d-flex align-items-center justify-content-start py-2">
+          <div class="d_ico">
+            <i class="fas fa-shield-alt theme-cl"></i>
+          </div>
+          <div class="d_capt">
+            <h5 class="mb-0">15-Days Returns</h5>
+            <span class="text-muted">Shop with fully confidence</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+        <div class="d-flex align-items-center justify-content-start py-2">
+          <div class="d_ico">
+            <i class="fas fa-headphones-alt theme-cl"></i>
+          </div>
+          <div class="d_capt">
+            <h5 class="mb-0">24x7 Fully Support</h5>
+            <span class="text-muted">Get friendly support</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

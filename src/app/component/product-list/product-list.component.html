@@ -1,0 +1,49 @@
+<div class="row align-items-start justify-content-between">
+
+    <div class="col-12 col-md-12 col-lg-8 col-xl-8">
+      <!-- row -->
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products" >
+                <td><img width="100" [src]="product.HinhAnh" ></td>
+              <td>{{ product.name }}</td>
+              <td>{{ product.price }}.000đ</td>
+              <td>
+                <a [routerLink]="['/admin/product-edit/' + product._id]">Edit</a> |
+                <!-- <li><a [routerLink]="['/admin/category-edit', categoryId]">Edit Category</a></li> -->
+
+                <a href="javscript:void(0)" (click)='deteleProduct(product._id)'>Delete</a>
+            </td>
+            </tr>
+  
+        </tbody>
+      </table>
+      <!--  -->
+      <div class="row align-items-center">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"></div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+          <div class="form-group">
+            <a [routerLink]="['/admin/product-add']" routerLinkActive="router-link-active" class="btn btn-primary">Add Product</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <nav>
+  <ul>
+    <li><a [routerLink]="['/home']">Home</a></li>
+    <li><a [routerLink]="['/login']">Login</a></li>
+    <li><a [routerLink]="['/admin/category-list']">Category List</a></li>
+    <li><a [routerLink]="['/admin/category-add']" class="btn btn-primary">Add Category</a></li>
+    <li><a [routerLink]="['/admin/product-list']">Product List</a></li>
+    <li><a [routerLink]="['/admin/product-add']">Add Product</a></li>
+  </ul>
+</nav> -->
+  

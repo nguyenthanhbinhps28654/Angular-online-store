@@ -1,0 +1,152 @@
+/* Reset some default styles */
+body, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Fullscreen product container */
+.product-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
+    width: 100vw; /* Chiếm toàn bộ chiều rộng màn hình */
+    background-color: #f7f7f7; /* Nền xám nhạt */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for product image */
+.product-image {
+    flex: 1; /* Chiếm 50% chiều rộng */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Giữ tỷ lệ ảnh */
+    transition: transform 0.3s ease;
+}
+
+.product-image img:hover {
+    transform: scale(1.1); /* Phóng to khi di chuột */
+}
+
+/* Styling for product details */
+.product-details {
+    flex: 1; /* Chiếm 50% chiều rộng */
+    padding: 40px; /* Padding cho sản phẩm */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Canh giữa nội dung */
+    background-color: #fff; /* Nền trắng cho chi tiết sản phẩm */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.product-title {
+    font-size: 2rem; /* Kích thước chữ lớn hơn */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Price styling */
+.product-price {
+    font-size: 1.8rem; /* Kích thước chữ lớn */
+    color: #d9534f; /* Màu đỏ */
+    margin-bottom: 20px;
+}
+
+/* Styling for option labels and buttons */
+.option-label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.option-button {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.option-button:hover {
+    background-color: #dff0d8; /* Light green */
+    transform: translateY(-2px);
+}
+
+.option-button.active {
+    background-color: #5cb85c; /* Bootstrap success color */
+    color: #fff;
+}
+
+/* Quantity control styling */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.quantity-button {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 0 5px;
+}
+
+.quantity-button:hover {
+    background-color: #dff0d8; /* Light green */
+    transform: translateY(-2px);
+}
+
+/* Input field styling */
+.quantity-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+/* Add to cart button styling */
+.add-to-cart-button {
+    background-color: #5cb85c; /* Bootstrap success color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 1.5rem; /* Kích thước chữ lớn hơn */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+.add-to-cart-button:hover {
+    background-color: #4cae4c; /* Darker green */
+    transform: translateY(-2px);
+}
+
+/* Breadcrumb styling */
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+}
+
+.breadcrumb-item a {
+    color: #007bff; /* Bootstrap primary color */
+    text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d; /* Bootstrap muted color */
+}

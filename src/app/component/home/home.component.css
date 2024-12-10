@@ -1,0 +1,69 @@
+.rows-products {
+    margin: 0 -15px;
+  }
+  
+  .product_grid {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product_grid:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .shop_thumb {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .shop_thumb img {
+    transition: transform 0.5s ease;
+  }
+  
+  .shop_thumb:hover img {
+    transform: scale(1.1);
+  }
+  
+  .product-hover-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .product_grid:hover .product-hover-overlay {
+    opacity: 1;
+  }
+  
+  .btn_love {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  .btn_love:hover {
+    color: #ff6f61; /* Màu sắc khi rê chuột */
+  }
+  
+  .card-footers {
+    border-top: 1px solid #f0f0f0;
+  }
+  
+  .elis_rty {
+    margin-top: 5px;
+  }
+  
+  .fs-md {
+    font-size: 1.1rem; /* Điều chỉnh kích thước font */
+  }
+  
+  .text-center h5 a {
+    text-decoration: none;
+    color: inherit; /* Giữ màu chữ giống như parent */
+    transition: color 0.3s ease;
+  }
+  
+  .text-center h5 a:hover {
+    color: #ff6f61; /* Màu sắc khi rê chuột lên tên sản phẩm */
+  }
+  

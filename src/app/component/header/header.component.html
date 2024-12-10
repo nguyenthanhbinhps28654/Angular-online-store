@@ -1,0 +1,84 @@
+<div class="header header-light dark-text">
+  <div class="container">
+    <nav id="navigation" class="navigation navigation-landscape">
+      <div class="nav-header">
+        <a class="nav-brand" href="#">
+          <img src="./assets/img/logo.png" class="logo" alt="" />
+        </a>
+        <div class="nav-toggle"></div>
+        <div class="mobile_nav">
+          <ul>
+            <li>
+              <a href="#" onclick="openSearch()">
+                <i class="lni lni-search-alt"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-toggle="modal" data-target="#login">
+                <i class="lni lni-user"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" onclick="openWishlist()">
+                <i class="lni lni-heart"></i><span class="dn-counter">2</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" onclick="openCart()">
+                <i class="lni lni-shopping-basket"></i><span class="dn-counter">0</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav-menus-wrapper" style="transition-property: none;">
+        <ul class="nav-menu">
+          <li><a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a></li>
+          <li><a>About</a></li>
+          <li>
+            <a href="javascript:void(0);" [routerLink]="['/products']" routerLinkActive="router-link-active">Product</a>
+            <ul class="nav-dropdown nav-submenu">
+              <li *ngFor="let category of categories">
+                <a [routerLink]="['/products']" [queryParams]="{ category: category._id}" routerLinkActive="router-link-active">{{category.name}}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="nav-menu nav-menu-social align-to-right">
+          <li>
+            {{this.keyword}}
+            <input type="text" name="keyword" [(ngModel)]="keyword">
+            <a href="javascript:void(0)" (click)="onSearch()">
+              <i class="lni lni-search-alt"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-toggle="modal" data-target="#login">
+              <i class="lni lni-user"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="openWishlist()">
+              <i class="lni lni-heart"></i><span class="dn-counter">2</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="openCart()">
+              <i class="lni lni-shopping-basket"></i><span class="dn-counter theme-bg">3</span>
+            </a>
+          </li>
+          <li><a href="javascript:void(0);">Tài Khoản</a>
+            <ul class="nav-dropdown nav-submenu">
+              <li><a [routerLink]="['/login']" routerLinkActive="router-link-active">Đăng nhập</a></li>
+              <li><a [routerLink]="['/register']" routerLinkActive="router-link-active">Đăng kí</a></li>
+              <li><a [routerLink]="['admin/category-list']" routerLinkActive="router-link-active">Trang Quản Trị</a></li>
+              <li><a (click)="onLogout()">Đăng Xuất</a></li>
+            </ul>
+          </li>
+          <li><a>Xin Chào Admin</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>

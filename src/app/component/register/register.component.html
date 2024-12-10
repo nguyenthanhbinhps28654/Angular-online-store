@@ -1,0 +1,143 @@
+<div class="gray py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Register</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ======================= Top Breadcrumbs ======================== -->
+
+<!-- ======================= Register Detail ======================== -->
+<section class="middle">
+  <div class="container">
+    <div class="row align-items-start justify-content-between">
+
+      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+        <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+          <div class="form-group">
+            <label for="name">Tên đăng nhập</label>
+            <input id="name" formControlName="name" class="form-control">
+            <small id="usernameHelpId" class="text-muted" *ngIf="registerForm.get('name')?.invalid && (registerForm.get('name')?.touched || registerForm.get('name')?.dirty)">
+              Tên đăng nhập là bắt buộc
+            </small>
+          </div>
+        
+          <!-- <div class="form-group">
+            <label for="fullname">Họ và tên</label>
+            <input id="fullname" formControlName="fullname" class="form-control">
+            <small class="text-muted" *ngIf="registerForm.get('fullname')?.invalid && (registerForm.get('fullname')?.touched || registerForm.get('fullname')?.dirty)">
+              Họ và tên là bắt buộc
+            </small>
+          </div> -->
+        
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" formControlName="email" class="form-control">
+            <small class="text-muted" *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.touched || registerForm.get('email')?.dirty)">
+              Email là bắt buộc và phải hợp lệ
+            </small>
+          </div>
+        
+          <div class="form-group">
+            <label for="password">Mật khẩu</label>
+            <input id="password" type="password" formControlName="password" class="form-control">
+            <small class="text-muted" *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.touched || registerForm.get('password')?.dirty)">
+              Mật khẩu là bắt buộc và ít nhất 6 ký tự
+            </small>
+          </div>
+        
+          <div class="form-group">
+            <label for="rePassword">Nhập lại mật khẩu</label>
+            <input id="rePassword" type="password" formControlName="rePassword" class="form-control">
+            <small class="text-muted" *ngIf="registerForm.errors?.['mismatch'] && (registerForm.get('rePassword')?.touched || registerForm.get('rePassword')?.dirty)">
+              Mật khẩu không khớp
+            </small>
+          </div>
+        
+          <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Đăng ký</button>
+        </form>
+        
+        
+      </div>
+
+      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+        <div class="border p-3 rounded">
+          <h5>Thông tin cần lưu ý</h5>
+          <p>Vui lòng điền thông tin chính xác để tạo tài khoản.</p>
+          <ul>
+            <li>Tên đăng nhập tối thiểu 6 ký tự.</li>
+            <li>Mật khẩu tối thiểu 6 ký tự.</li>
+            <li>Email phải hợp lệ.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ======================= Register End ======================== -->
+
+<!-- ============================= Customer Features =============================== -->
+<section class="px-0 py-3 br-top">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+        <div class="d-flex align-items-center justify-content-start py-2">
+          <div class="d_ico">
+            <i class="fas fa-shopping-basket theme-cl"></i>
+          </div>
+          <div class="d_capt">
+            <h5 class="mb-0">Miễn phí vận chuyển</h5>
+            <span class="text-muted">Giới hạn $10 cho mỗi đơn hàng</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+        <div class="d-flex align-items-center justify-content-start py-2">
+          <div class="d_ico">
+            <i class="far fa-credit-card theme-cl"></i>
+          </div>
+          <div class="d_capt">
+            <h5 class="mb-0">Thanh toán an toàn</h5>
+            <span class="text-muted">Trả góp lên đến 6 tháng</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+        <div class="d-flex align-items-center justify-content-start py-2">
+          <div class="d_ico">
+            <i class="fas fa-shield-alt theme-cl"></i>
+          </div>
+          <div class="d_capt">
+            <h5 class="mb-0">Đổi trả trong 15 ngày</h5>
+            <span class="text-muted">Mua sắm hoàn toàn tự tin</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+        <div class="d-flex align-items-center justify-content-start py-2">
+          <div class="d_ico">
+            <i class="fas fa-headphones-alt theme-cl"></i>
+          </div>
+          <div class="d_capt">
+            <h5 class="mb-0">Hỗ trợ 24/7</h5>
+            <span class="text-muted">Nhận hỗ trợ thân thiện</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
