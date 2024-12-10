@@ -1,55 +1,68 @@
 const categoryModel = require('./category.model')
 const { Error } = require('mongoose')
 
-module.exports = { getAllCate, createCate, updateCate, deleteCate, getIdCate };
+module.exports = {deleteCategory, getAllCategory, getIdCategory, insert, updateCate}
 
-async function getAllCate() {
+async function deleteCategory(id) {
     try {
-        const result = await categoryModel.find();
-        return result;
+        const proDel = await categoryModel.findByIdAndDelete(id)
+        if(!proDel){
+            throw new Error('Không tìm thấy sản phẩm')
+        }
+        return proDel
     } catch (error) {
         console.log(error);
-        throw error;
+        throw error
     }
 }
 
-async function createCate(data) {
+async function updateCate(id, body) {
     try {
-        const newCate = new categoryModel(data);
-        const result = await newCate.save();
-        return result;
+        const pro = await categoryModel.findById(id)
+        if(!pro){
+            throw new Error('Đếch thấy sản phẩm')
+        }
+        const {name} = body
+        const result = await categoryModel.findByIdAndUpdate(id,
+            {name},
+            {new: true}
+        )
+        return result
     } catch (error) {
         console.log(error);
-        throw error;
+        throw error
     }
 }
 
-async function updateCate(id, data) {
+async function insert(body) {
     try {
-        const result = await categoryModel.findByIdAndUpdate(id, data, { new: true });
-        return result;
+        const {name} = body;
+        const cateNew = new categoryModel({
+            name
+        })
+        const result = await cateNew.save()
+        return result
     } catch (error) {
         console.log(error);
-        throw error;
+        throw error
+    }
+}
+async function getAllCategory() {
+    try {
+        const result = await categoryModel.find().limit(10)
+        return result
+    } catch (error) {
+        console.log(error);
+        throw error   
     }
 }
 
-async function deleteCate(id) {
+async function getIdCategory(id) {
     try {
-        const result = await categoryModel.findByIdAndDelete(id);
-        return result;
+        const result = await categoryModel.findById(id)
+        return result
     } catch (error) {
         console.log(error);
-        throw error;
-    }
-}
-
-async function getIdCate(id) {
-    try {
-        const result = await categoryModel.findById(id);
-        return result;
-    } catch (error) {
-        console.log(error);
-        throw error;
+        throw error   
     }
 }

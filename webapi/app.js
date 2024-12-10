@@ -5,58 +5,56 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
-var hbs = require('hbs');
+require('./mongo/category.model')
+require('./mongo/product.model')
+require('./mongo/user.model')
 
-// Yêu cầu các mô hình (model)
-require('./mongo/category.model');
-require('./mongo/product.model');
-require('./mongo/user.model');  // Thêm mô hình người dùng
-
-// Yêu cầu các routes
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
 var categoryRouter = require('./routes/category');
-var accountRouter = require('./routes/account');  // Thêm router account
+var userRouter = require('./routes/users');
 
 var app = express();
 
-// Thiết lập view engine
+// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-hbs.registerPartials(path.join(__dirname, 'views/partials')); // Đăng ký các partials
 
-// Sử dụng các middleware
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors());
 
-// Kết nối MongoDB
+
+app.use(cors({
+  origin: 'http://localhost:4200',
+  credentials: true 
+}));
+
+
 mongoose.connect('mongodb://localhost:27017/fr1')
-    .then(() => console.log('Kết nối thành công'))
-    .catch(err => console.log('Kết nối thất bại', err));
+.then(() => console.log('ket noi thanh cong'))
+.catch(err => console.log('ket noi that bai', err));
 
-// Sử dụng các router
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/product', productRouter);
 app.use('/category', categoryRouter);
-app.use('/account', accountRouter);  // Sử dụng router account
-
-// Bắt lỗi 404 và chuyển tiếp đến trình xử lý lỗi
+app.use('/user', userRouter);
+// catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    next(createError(404));
+  next(createError(404));
 });
 
-// Trình xử lý lỗi
+// error handler
 app.use(function(err, req, res, next) {
-    res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err : {};
-    res.status(err.status || 500);
-    res.render('error');
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
 });
 
 module.exports = app;
